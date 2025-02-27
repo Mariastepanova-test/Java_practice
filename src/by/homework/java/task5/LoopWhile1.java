@@ -7,8 +7,7 @@ public class LoopWhile1 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число, которое не оканчивается на ноль: ");
         int number = scanner.nextInt();
-
-       System.out.print("Вывести число в обратном порядке: ");
+        System.out.print("Вывести число в обратном порядке: ");
         while (number > 0) {
             int newNumber = number % 10;
             System.out.print(newNumber);

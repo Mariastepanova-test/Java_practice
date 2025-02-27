@@ -5,17 +5,24 @@ import java.util.Scanner;
 public class LoopWhileAndIf {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Введите число, которое не оканчивается на ноль: ");
-        int digit = scanner.nextInt();
-
+        System.out.println("Введите число, которое не оканчивается на ноль: ");
+        int number = scanner.nextInt();
+        String evennumber = "";
+        String oddnumber = "";
+        while (number > 0) {
+            int digit = number % 10;
             if (digit % 2 == 0) {
-                System.out.print("Четная цифра");
+                evennumber = digit + " " + evennumber;
             } else {
-                System.out.print("Нечетная цифра");
+                oddnumber = digit + " " + oddnumber;
             }
-            digit/=10;
-        scanner.close();
+            number /= 10;
         }
-      }
+        System.out.println("Четные цифры: " + evennumber);
+        System.out.println("Нечетные цифры: " + oddnumber);
+        scanner.close();
+    }
+}
+
+
 
