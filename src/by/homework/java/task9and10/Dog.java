@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Dog extends Animal {
 
-    String name;
-    String dogBreed;
-    int weight;
+    private String name;
+    private String dogBreed;
+    private int weight;
 
 
     public Dog(String name, String dogBreed, int weight, String color, int maxLifeExpectancy, String foodType) {
@@ -70,20 +70,23 @@ public class Dog extends Animal {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Dog)) return false;
-        if (!super.equals(o)) return false;
-        Dog dog = (Dog) o;
-        return weight == dog.weight &&
-                dogBreed.equals(dog.dogBreed);
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Dog)) return false;
+
+        Dog dog = (Dog) obj;
+        if (dogBreed.equals(dog.getBreed())) {
+            return true;
+        }
+        return false;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), name, dogBreed, weight);
+        int result = dogBreed.hashCode();
+        return result;
     }
 }
+
 
 
 

@@ -3,8 +3,8 @@ package by.homework.java.task9and10;
 import java.util.Objects;
 
 public class Bird extends Animal {
-    String birdName;
-    int maxFlightAltitude;
+    private String birdName;
+    private int maxFlightAltitude;
 
 
     public Bird() {
@@ -54,11 +54,6 @@ public class Bird extends Animal {
     }
 
 
-    public static void main(String[] args) {
-        Animal animal2 = new Bird();
-        animal2.voice();
-    }
-
     @Override
     public String toString() {
         return "Семейство птиц: " + birdName + ", максимальная высота полета: " + maxFlightAltitude +
@@ -67,20 +62,23 @@ public class Bird extends Animal {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Bird)) return false;
-        if (!super.equals(o)) return false;
-        Bird bird = (Bird) o;
-        return maxFlightAltitude == bird.maxFlightAltitude &&
-                birdName.equals(bird.birdName);
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Bird)) {
+            return false;
+        }
+        Bird bird = (Bird) obj;
+        if (birdName.equals(bird.getBirdName())) {
+            return true;
+        }
+        return false;
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(super.hashCode(), birdName, maxFlightAltitude);
+        int result = birdName.hashCode();
         return result;
     }
 }
+
 
 
