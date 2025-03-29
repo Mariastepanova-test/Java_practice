@@ -57,8 +57,8 @@ public class Bird extends Animal {
     @Override
     public String toString() {
         return "Семейство птиц: " + birdName + ", максимальная высота полета: " + maxFlightAltitude +
-                ", окрас: " + color + ", максимальная продолжительность жизни: " + maxLifeExpectancy +
-                ", тип пищи: " + foodType;
+                ", окрас: " + getColor() + ", максимальная продолжительность жизни: " + getMaxLifeExpectancy() +
+                ", тип пищи: " + getFoodType();
     }
 
     @Override

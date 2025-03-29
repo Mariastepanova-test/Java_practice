@@ -65,8 +65,8 @@ public class Dog extends Animal {
 
     @Override
     public String toString() {
-        return "Кличка: " + name + ", порода: " + dogBreed + ", вес: " + weight + ", окрас: " + color + ", максимальная продолжительность жизни: " + maxLifeExpectancy +
-                ", тип пищи: " + foodType;
+        return "Кличка: " + name + ", порода: " + dogBreed + ", вес: " + weight + ", окрас: " + getColor() + ", максимальная продолжительность жизни: " + getMaxLifeExpectancy() +
+                ", тип пищи: " + getFoodType();
     }
 
     @Override

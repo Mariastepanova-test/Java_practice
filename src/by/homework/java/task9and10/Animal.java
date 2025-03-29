@@ -2,9 +2,9 @@ package by.homework.java.task9and10;
 
 public abstract class Animal {
 
-    String color;
-    int maxLifeExpectancy;
-    String foodType;
+    private String color;
+    private int maxLifeExpectancy;
+    private String foodType;
 
     public Animal() {
         this.color = "";
@@ -26,12 +26,12 @@ public abstract class Animal {
         this.color = color;
     }
 
-    public int getMaxLifeSpan() {
+    public int getMaxLifeExpectancy() {
         return maxLifeExpectancy;
     }
 
-    public void setMaxLifeSpan(int maxLifeSpan) {
-        this.maxLifeExpectancy = maxLifeSpan;
+    public void setMaxLifeExpectancy(int maxLifeExpectancy) {
+        this.maxLifeExpectancy = maxLifeExpectancy;
     }
 
     public String getFoodType() {
