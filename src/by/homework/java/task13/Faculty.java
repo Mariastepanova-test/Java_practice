@@ -62,7 +62,7 @@ public class Faculty {
     }
 
 
-    public void StudentsByAverageMarkAscending() {
+    public void studentsByAverageMarkAscending() {
         List<Student> students = getStudents();
         students.sort(Comparator.comparingDouble(Student::getAverageMark));
         System.out.println("Студенты отсортированы по возрастанию среднего балла:");
@@ -71,7 +71,7 @@ public class Faculty {
         }
     }
 
-    public void StudentsByAverageMarkDescending() {
+    public void studentsByAverageMarkDescending() {
         List<Student> students = getStudents();
         students.sort(Comparator.comparingDouble(Student::getAverageMark).reversed());
         System.out.println("Студенты отсортированы по убыванию среднего балла:");

@@ -8,7 +8,7 @@ public class Patient {
     private final String lastName;
     private final String diagnosis;
     private final int age;
-    private Gender gender;
+    private final Gender gender;
 
     public Patient(int id, String firstName, String lastName, String diagnosis, int age, Gender gender) {
         this.id = id;

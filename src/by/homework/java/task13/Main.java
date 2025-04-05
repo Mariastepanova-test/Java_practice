@@ -46,8 +46,8 @@ public class Main {
         itFaculty.updateStatus();
         System.out.println(itFaculty);
 
-        itFaculty.StudentsByAverageMarkAscending();
-        itFaculty.StudentsByAverageMarkDescending();
+        itFaculty.studentsByAverageMarkAscending();
+        itFaculty.studentsByAverageMarkDescending();
         if (itFaculty.isActive()) {
             System.out.println("Факультет активен.");
         } else {

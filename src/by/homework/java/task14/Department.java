@@ -4,8 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Department {
-    private final String name;
+    private String name;
     private final Set<Ward> wards;
+    Department infection;
 
     public Department(String name) {
         this.name = name;
@@ -16,19 +17,26 @@ public class Department {
         wards.add(ward);
     }
 
-    public int countGender(Gender gender) {
+    private int getPatientsFromWard(Ward ward, Gender gender) {
         int count = 0;
-        for (Ward ward : wards) {
-            for (Patient patient : ward.getPatients()) {
-                if (patient.getGender() == gender) {
-                    count++;
-                }
+        for (Patient patient : ward.getPatients()) {
+            if (patient.getGender() == gender) {
+                count++;
             }
         }
         return count;
     }
 
-    public void DepartmentInfo() {
+    public int countGender(Gender gender) {
+        int count = 0;
+        for (Ward ward : wards) {
+            count += getPatientsFromWard(ward, gender);
+
+        }
+        return count;
+    }
+
+    public void departmentInfo() {
         System.out.println("Отделение: " + name);
         for (Ward ward : wards) {
             ward.printPatients();
