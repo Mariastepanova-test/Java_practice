@@ -51,20 +51,7 @@ class FileGeneratorTask implements Callable<List<String>> {
         return sb.toString();
     }
 
-    public static void main(String[] args) throws InterruptedException, ExecutionException {
-        ExecutorService executor = Executors.newFixedThreadPool(3);
-        List<Future<List<String>>> futures = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
-            futures.add(executor.submit(new FileGeneratorTask()));
-        }
-
-        for (Future<List<String>> future : futures) {
-            List<String> result = future.get();
-            System.out.println("Имена файлов: " + result);
-        }
-        executor.shutdown();
-    }
 
     public int getLength() {
         return length;
